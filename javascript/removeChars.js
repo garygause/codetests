@@ -33,3 +33,19 @@ console.log(
   'removeCharsBetter: ',
   removeCharsBetter(['a', 'b', 'c'], 'carboniferous')
 );
+
+// optimized further
+function removeCharsBest(chars, B) {
+  const charSet = new Set(chars);
+  const output = [];
+  for (const ltr of B) {
+    if (!charSet.has(ltr)) {
+      output.push(ltr);
+    }
+  }
+  return output.join('');
+}
+console.log(
+  'removeCharsBest: ',
+  removeCharsBest(['a', 'b', 'c'], 'carboniferous')
+);
